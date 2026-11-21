@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listing — Gujranwala Gazette Directory (Demo)</title>
+<meta name="description" content="DEMO listing detail: full hours against the printed demo clock, services, an honest map placeholder, an enquiry form and claim-your-listing.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar"><strong>DEMO</strong> — The Gujranwala Gazette Directory is a fictional directory built for the MTS / BalanceBit portfolio. Every business, rating and review count is demo data.</div>
+<header class="site"><div class="wrap">
+  <div class="mast"><a class="logo" href="index.html">The Gujranwala <em>Gazette</em> Directory<small>Your city, listed · A demo directory</small></a></div>
+  <div class="dateline"><span>Gujranwala, Punjab</span><span>Demo clock: <span data-clock></span></span><span>18 fictional listings</span></div>
+  <nav class="main" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="browse.html">Browse &amp; Search</a>
+    <a href="claim.html">Claim Your Listing</a>
+    <a href="mine.html" data-nav-mine>My Claims &amp; Enquiries</a>
+    <a href="about.html">About This Demo</a>
+  </nav>
+</div></header>
+<main id="main"><section class="band" style="padding-top:34px"><div class="wrap" data-detail>
+  <p class="eyebrow"><a href="browse.html">← Back to the directory</a></p>
+  <div data-notfound hidden>
+    <h1 style="font-size:44px">Listing not found</h1>
+    <p>That listing is not in this demo directory. <a href="browse.html">Browse all 18 listings</a> instead.</p>
+  </div>
+  <div data-found>
+    <div class="hero-grid detail">
+      <div>
+        <div class="meta" data-meta></div>
+        <h1 data-name style="font-size:clamp(36px,5vw,56px)"></h1>
+        <div class="meta" style="font-size:15px"><span class="stars" data-stars></span><span data-reviews></span><span data-openbadge></span><span data-claim-badge></span></div>
+        <p data-blurb style="font-size:18px"></p>
+        <p><strong>Address (demo):</strong> <span data-address></span><br>
+        <strong>Phone (demo):</strong> <a data-phone-link href="#"><span data-phone></span></a></p>
+        <p style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn wa" type="button" data-wa>WhatsApp this business (demo)</button>
+          <a class="btn ghost" data-claim-link href="claim.html">Claim this listing</a>
+        </p>
+        <p class="note">WhatsApp opens a prefilled demo message to a demo number; the click is recorded in a local demo log on this device only.</p>
+      </div>
+      <div class="hero-frame"><img class="hero-img" data-img src="assets/hero.jpg" alt="Listing photograph — demo"></div>
+    </div>
+
+    <div class="cols" style="margin-top:36px">
+      <div>
+        <div class="panel">
+          <h2 style="font-size:30px">Services &amp; tags</h2>
+          <ul data-services></ul>
+          <div class="meta" data-tags></div>
+        </div>
+        <div class="panel" style="margin-top:20px">
+          <h2 style="font-size:30px">Send an enquiry</h2>
+          <p class="note">Demo only — the enquiry is stored on this device and appears under My Claims &amp; Enquiries. Nothing is sent to any real business.</p>
+          <form class="stack" data-enquiry novalidate>
+            <div class="frow">
+              <div><label class="flabel" for="en-name">Your name</label>
+              <input type="text" id="en-name" data-name-input autocomplete="name">
+              <p class="err" data-error-for="name"></p></div>
+              <div><label class="flabel" for="en-phone">Mobile (PK)</label>
+              <input type="tel" id="en-phone" data-phone-input autocomplete="tel" placeholder="0321 1234567">
+              <p class="err" data-error-for="phone"></p></div>
+            </div>
+            <div><label class="flabel" for="en-msg">Message</label>
+            <textarea id="en-msg" data-message-input placeholder="What would you like to ask this business?"></textarea>
+            <p class="err" data-error-for="message"></p></div>
+            <p class="err" data-error-for="listing"></p>
+            <button class="btn" type="submit">Send enquiry (demo)</button>
+          </form>
+          <div class="confirm" data-confirmation-box hidden style="margin-top:18px">
+            <p class="eyebrow">Enquiry recorded — demo</p>
+            <p data-confirmation style="margin:0"></p>
+            <p style="margin-bottom:0"><a href="mine.html">See it in My Claims &amp; Enquiries →</a></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <h2 style="font-size:30px">Opening hours</h2>
+          <p class="clock-note">Demo clock: <span data-clock></span>. Today's row is highlighted; “Open now” means the demo time is before closing — at exactly closing time the business is closed.</p>
+          <table class="hours" data-hours aria-label="Weekly opening hours"></table>
+        </div>
+        <div class="mapbox" style="margin-top:20px" role="img" aria-label="Map placeholder for this demo listing">
+          <p class="pin" aria-hidden="true">◎</p>
+          <h3 data-map-name></h3>
+          <p data-map-area style="margin:0 0 6px"></p>
+          <p class="note" style="margin:0">Map placeholder — demo. No live map is embedded in this portfolio demo; a production build would place the verified location pin here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <noscript><p>This demo directory needs JavaScript to render listing details. No data is sent anywhere.</p></noscript>
+</div></section></main>
+<footer class="site"><div class="wrap cols">
+  <div><p style="font-family:var(--cond);font-size:24px;margin:0 0 8px;text-transform:uppercase">The Gujranwala Gazette Directory</p>
+  <p style="margin:0">A fictional city directory. Demo build for the MTS portfolio (client-facing owner: BalanceBit Solutions). All businesses, ratings, review counts, phones and addresses are demo data.</p></div>
+  <div><p style="font-weight:700;margin:0 0 8px">Explore</p>
+  <p style="margin:0"><a href="browse.html">Browse &amp; Search</a><br><a href="claim.html">Claim Your Listing</a><br><a href="mine.html">My Claims &amp; Enquiries</a><br><a href="about.html">About This Demo</a></p></div>
+  <div><p style="font-weight:700;margin:0 0 8px">Demo contact</p>
+  <p style="margin:0">WhatsApp (demo): +92 300 1234567<br>Every listing carries a WhatsApp button — clicks are recorded in a local demo log only.</p></div>
+</div></footer>
+<script src="js/logic.js"></script>
+<script src="js/site.js"></script>
+<script src="js/listing.js"></script>
+</body>
+</html>

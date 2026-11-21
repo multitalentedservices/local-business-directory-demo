@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim Your Listing — Gujranwala Gazette Directory (Demo)</title>
+<meta name="description" content="DEMO claim-your-listing flow: claim a fictional listing or suggest a new one; claims are stored locally with Pending review (demo) status.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar"><strong>DEMO</strong> — The Gujranwala Gazette Directory is a fictional directory built for the MTS / BalanceBit portfolio. Every business, rating and review count is demo data.</div>
+<header class="site"><div class="wrap">
+  <div class="mast"><a class="logo" href="index.html">The Gujranwala <em>Gazette</em> Directory<small>Your city, listed · A demo directory</small></a></div>
+  <div class="dateline"><span>Gujranwala, Punjab</span><span>Demo clock: <span data-clock></span></span><span>18 fictional listings</span></div>
+  <nav class="main" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="browse.html">Browse &amp; Search</a>
+    <a href="claim.html" aria-current="page">Claim Your Listing</a>
+    <a href="mine.html" data-nav-mine>My Claims &amp; Enquiries</a>
+    <a href="about.html">About This Demo</a>
+  </nav>
+</div></header>
+<main id="main"><section class="band" style="padding-top:34px"><div class="wrap">
+  <p class="eyebrow">For business owners &amp; managers</p>
+  <h1 style="font-size:clamp(34px,4.6vw,52px)">Claim your listing</h1>
+  <p style="max-width:44em">Claiming tells the directory “this business is mine to look after”. In this demo the claim is stored only on this device with the status “Pending review (demo)”, you get a claim reference, and the listing page shows a “Claim pending (demo)” badge straight away.</p>
+
+  <div class="cols">
+    <div class="panel">
+      <h2 style="font-size:30px">Claim an existing listing</h2>
+      <form class="stack" data-claim novalidate>
+        <div><label class="flabel" for="cl-listing">Listing you are claiming</label>
+        <select id="cl-listing" data-listing></select>
+        <p class="err" data-error-for="listing"></p></div>
+        <div class="frow">
+          <div><label class="flabel" for="cl-name">Your full name</label>
+          <input type="text" id="cl-name" data-cname autocomplete="name">
+          <p class="err" data-error-for="name"></p></div>
+          <div><label class="flabel" for="cl-role">Your role</label>
+          <select id="cl-role" data-role>
+            <option value="">Choose your role…</option>
+            <option value="owner">Owner of the business</option>
+            <option value="manager">Manager of the business</option>
+          </select>
+          <p class="err" data-error-for="role"></p></div>
+        </div>
+        <div class="frow">
+          <div><label class="flabel" for="cl-phone">Mobile (PK)</label>
+          <input type="tel" id="cl-phone" data-cphone autocomplete="tel" placeholder="0321 1234567">
+          <p class="err" data-error-for="phone"></p></div>
+          <div><label class="flabel" for="cl-email">Business email</label>
+          <input type="email" id="cl-email" data-cemail autocomplete="email" placeholder="name@business.com">
+          <p class="err" data-error-for="email"></p></div>
+        </div>
+        <div><label class="flabel" for="cl-proof">Proof of connection</label>
+        <textarea id="cl-proof" data-proof placeholder="For example: a utility bill or trade licence in the business name, and how the reviewer can verify it."></textarea>
+        <p class="err" data-error-for="proof"></p></div>
+        <button class="btn" type="submit">Submit claim (demo)</button>
+      </form>
+      <div class="confirm" data-claim-confirmation-box hidden style="margin-top:18px">
+        <p class="eyebrow">Claim submitted — demo</p>
+        <p class="ref" data-claim-ref></p>
+        <p data-claim-confirmation style="margin:0"></p>
+        <p style="margin-bottom:0"><a data-claim-view-link href="mine.html">See it in My Claims →</a> · <a data-claim-listing-link href="browse.html">Open the listing to see its pending badge →</a></p>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <h2 style="font-size:30px">Not listed yet? Suggest a business</h2>
+        <p class="note">A suggested business is <strong>never published by this form</strong>. It is recorded under My Claims as “New listing — pending (demo)” for review, and it does not appear in search or browse results.</p>
+        <form class="stack" data-suggest novalidate>
+          <div><label class="flabel" for="sg-name">Business name</label>
+          <input type="text" id="sg-name" data-sname>
+          <p class="err" data-serror-for="bizName"></p></div>
+          <div class="frow">
+            <div><label class="flabel" for="sg-cat">Category</label>
+            <select id="sg-cat" data-scat></select>
+            <p class="err" data-serror-for="category"></p></div>
+            <div><label class="flabel" for="sg-area">Area</label>
+            <select id="sg-area" data-sarea></select>
+            <p class="err" data-serror-for="area"></p></div>
+          </div>
+          <div><label class="flabel" for="sg-phone">Business mobile (PK)</label>
+          <input type="tel" id="sg-phone" data-sphone placeholder="0321 1234567">
+          <p class="err" data-serror-for="phone"></p></div>
+          <button class="btn ghost" type="submit">Suggest this business (demo)</button>
+        </form>
+        <div class="confirm" data-suggest-confirmation-box hidden style="margin-top:18px">
+          <p class="eyebrow">Suggestion recorded — demo</p>
+          <p class="ref" data-suggest-ref></p>
+          <p data-suggest-confirmation style="margin:0"></p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:20px">
+        <h3>What happens after a claim?</h3>
+        <ul>
+          <li>The claim waits as <strong>Pending review (demo)</strong> — in a production directory a reviewer would check the proof note.</li>
+          <li>The listing shows a <strong>Claim pending (demo)</strong> badge while it waits.</li>
+          <li>Your claims and suggestions are listed under <a href="mine.html">My Claims &amp; Enquiries</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <noscript><p>This demo needs JavaScript for its claim forms. No data is sent anywhere.</p></noscript>
+</div></section></main>
+<footer class="site"><div class="wrap cols">
+  <div><p style="font-family:var(--cond);font-size:24px;margin:0 0 8px;text-transform:uppercase">The Gujranwala Gazette Directory</p>
+  <p style="margin:0">A fictional city directory. Demo build for the MTS portfolio (client-facing owner: BalanceBit Solutions). All businesses, ratings, review counts, phones and addresses are demo data.</p></div>
+  <div><p style="font-weight:700;margin:0 0 8px">Explore</p>
+  <p style="margin:0"><a href="browse.html">Browse &amp; Search</a><br><a href="claim.html">Claim Your Listing</a><br><a href="mine.html">My Claims &amp; Enquiries</a><br><a href="about.html">About This Demo</a></p></div>
+  <div><p style="font-weight:700;margin:0 0 8px">Demo contact</p>
+  <p style="margin:0">WhatsApp (demo): +92 300 1234567<br>Every listing carries a WhatsApp button — clicks are recorded in a local demo log only.</p></div>
+</div></footer>
+<script src="js/logic.js"></script>
+<script src="js/site.js"></script>
+<script src="js/claim.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+browse count initial -> Showing 18 of 18 listings
+empty state text -> Nothing in the directory matches category = Retail & Shops, area = Civil Lines. Try removing one filter, or reset everything below.
+empty state URL -> file:///home/hatch/workspace/portfolio-builds/local-business-directory-demo/browse.html?category=retail&area=Civil+Lines
+after reset count -> Showing 18 of 18 listings | URL -> file:///home/hatch/workspace/portfolio-builds/local-business-directory-demo/browse.html
+open-now count -> Showing 12 of 18 listings | URL -> file:///home/hatch/workspace/portfolio-builds/local-business-directory-demo/browse.html?open=1
+claim badge BEFORE claim -> ""
+open badge -> Open now
+today hours row -> Sunday (today, demo)11:00 AM – 11:00 PM
+FIRING whatsapp log -> [{"listing":"chargha-house","listingName":"Chargha House","at":"Sunday 22 November 2026 2:30 PM","channel":"whatsapp-demo"}]
+phone error CONTENT -> Enter a Pakistani mobile number with 11 digits starting 03, for example 0321 1234567.
+phone error after fix (must be empty) -> ""
+enquiry confirmation CONTENT -> Thank you, Ahmed Raza. Your enquiry to Chargha House was recorded with reference EN-DEMO-9068 and is listed under My Claims & Enquiries. This is a demo — no message was sent to any real business.
+enquiry ref -> EN-DEMO-9068
+claim listing preselected -> chargha-house
+claim ref -> CL-DEMO-3752
+claim badge AFTER claim -> "Claim pending (demo)"
+suggest ref -> CL-DEMO-5690
+browse search for suggested business (must be 0) -> Showing 0 of 18 listings
+my claims CONTENT -> Chargha House Pending review (demo)Reference CL-DEMO-3752 · Claimed by Ahmed Raza (owner) · ahmed@charghahouse.example · 03215550199 · Recorded Sunday 22 November 2026 (demo).Zaiqa Bakery New listing — pending (demo)Reference CL-DEMO-5690 · Restaurants & Cafés · Model Town · 03215550199 · Recorded Sunday 22 November 20
+my enquiries CONTENT -> Chargha House Sent (demo)Reference EN-DEMO-9068 · From Ahmed Raza · Sunday 22 November 2026 (demo).“Do you take walk-ins for a family of six tonight?”
+log summary -> On this device: 2 claim record(s), 1 enquiry record(s), 1 WhatsApp click(s) recorded in the demo log.
+FIRING stored claims = ["CL-DEMO-3752:Pending review (demo)","CL-DEMO-5690:New listing — pending (demo)"]
+FIRING stored enquiries = ["EN-DEMO-9068:Chargha House"]

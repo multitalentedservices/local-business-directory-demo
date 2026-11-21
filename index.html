@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gujranwala Gazette Directory — Find Local Businesses (Demo)</title>
+<meta name="description" content="DEMO portfolio directory for a fictional Gujranwala city guide: 18 fictional businesses across 6 categories and 5 areas, with search, open-now filters, listing enquiries and claim-your-listing.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar"><strong>DEMO</strong> — The Gujranwala Gazette Directory is a fictional directory built for the MTS / BalanceBit portfolio. Every business, rating and review count is demo data.</div>
+<header class="site"><div class="wrap">
+  <div class="mast"><a class="logo" href="index.html">The Gujranwala <em>Gazette</em> Directory<small>Your city, listed · A demo directory</small></a></div>
+  <div class="dateline"><span>Gujranwala, Punjab</span><span>Demo clock: <span data-clock></span></span><span>18 fictional listings</span></div>
+  <nav class="main" aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="browse.html">Browse &amp; Search</a>
+    <a href="claim.html">Claim Your Listing</a>
+    <a href="mine.html" data-nav-mine>My Claims &amp; Enquiries</a>
+    <a href="about.html">About This Demo</a>
+  </nav>
+</div></header>
+<main id="main">
+  <section class="hero"><div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">The city directory · Est. for this demo</p>
+        <h1>Find a good business in Gujranwala, fast.</h1>
+        <p class="lede">Restaurants, salons, clinics, workshops and shops across Satellite Town, Model Town, Civil Lines, People's Colony and DHA — searched in seconds, with honest opening hours worked out against the printed demo clock.</p>
+        <form class="searchbox" action="browse.html" method="get">
+          <div class="searchrow">
+            <div><label class="flabel" for="hq">Search the directory</label>
+            <input type="text" id="hq" name="q" placeholder="Try: karahi, pharmacy, AC service…" autocomplete="off"></div>
+            <button class="btn" type="submit" style="align-self:end">Search</button>
+          </div>
+          <p class="note" style="margin:0">Demo clock: today in this demo is <span data-clock></span>. “Open now” is worked out from each listing's Sunday hours against that fixed time — a business is closed at exactly its closing time.</p>
+        </form>
+        <div class="hero-stats">
+          <div><strong>18</strong><span>demo listings</span></div>
+          <div><strong>6</strong><span>categories</span></div>
+          <div><strong>5</strong><span>areas of the city</span></div>
+          <div><strong data-open-count>–</strong><span>open now (demo clock)</span></div>
+        </div>
+      </div>
+      <div class="hero-frame"><img class="hero-img" src="assets/hero.jpg" alt="A busy Gujranwala bazaar street with shops, rickshaws and shoppers — demo photograph"></div>
+    </div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <hr class="rule">
+    <p class="eyebrow" style="margin-top:26px">Browse by category</p>
+    <h2>Six shelves of the city</h2>
+    <div class="grid" data-categories></div>
+  </div></section>
+
+  <section class="band tint"><div class="wrap">
+    <p class="eyebrow">Featured in this edition</p>
+    <h2>Listings the editors marked first</h2>
+    <div class="grid" data-featured></div>
+    <p style="margin-top:20px"><a class="btn ghost" href="browse.html">Browse all 18 listings</a></p>
+  </div></section>
+
+  <section class="band dark"><div class="wrap cols">
+    <div>
+      <p class="eyebrow">Own a business here?</p>
+      <h2>Claim your listing in this demo</h2>
+      <p>Pick your listing, say who you are, and leave a note about your proof. The claim is stored only on this device with the status “Pending review (demo)” — and the listing page immediately shows a “Claim pending (demo)” badge, so you can see the claim worked.</p>
+      <p><a class="btn" href="claim.html">Start a claim</a></p>
+    </div>
+    <div class="panel" style="color:var(--ink)">
+      <h3>How this directory works</h3>
+      <ul>
+        <li><strong>Search &amp; filter</strong> — text, category, area, open-now and three sorts, combined together.</li>
+        <li><strong>Enquire</strong> — send a listing a message; it lands in My Claims &amp; Enquiries on this device.</li>
+        <li><strong>Claim</strong> — owners and managers can claim a listing or suggest a new one for review.</li>
+      </ul>
+      <p class="note">Nothing leaves this device. There is no real directory, no real business and no real review behind any page here.</p>
+    </div>
+  </div></section>
+</main>
+<footer class="site"><div class="wrap cols">
+  <div><p style="font-family:var(--cond);font-size:24px;margin:0 0 8px;text-transform:uppercase">The Gujranwala Gazette Directory</p>
+  <p style="margin:0">A fictional city directory. Demo build for the MTS portfolio (client-facing owner: BalanceBit Solutions). All businesses, ratings, review counts, phones and addresses are demo data — invented for this portfolio piece.</p></div>
+  <div><p style="font-weight:700;margin:0 0 8px">Explore</p>
+  <p style="margin:0"><a href="browse.html">Browse &amp; Search</a><br><a href="claim.html">Claim Your Listing</a><br><a href="mine.html">My Claims &amp; Enquiries</a><br><a href="about.html">About This Demo</a></p></div>
+  <div><p style="font-weight:700;margin:0 0 8px">Demo contact</p>
+  <p style="margin:0">WhatsApp (demo): +92 300 1234567<br>Every listing carries a WhatsApp button — clicks are recorded in a local demo log only.</p></div>
+</div></footer>
+<script src="js/logic.js"></script>
+<script src="js/site.js"></script>
+<script>
+  document.querySelector("[data-open-count]").textContent = DirLogic.LISTINGS.filter(function (b) { return DirLogic.isOpenNow(b); }).length;
+  document.querySelector("[data-categories]").innerHTML = DirLogic.CATEGORIES.map(function (c, i) {
+    var n = DirLogic.LISTINGS.filter(function (b) { return b.category === c.id; }).length;
+    return '<a class="cat-tile" href="browse.html?category=' + c.id + '"><img src="' + c.img + '" alt="Photo representing ' + c.label + ' in Gujranwala — demo photograph" loading="lazy">' +
+      '<span class="tile-body" style="display:block"><span class="tile-num">No. ' + (i + 1) + '</span><h3>' + c.label + '</h3><p>' + n + ' demo listings — tap to browse this shelf.</p></span></a>';
+  }).join("");
+  document.querySelector("[data-featured]").innerHTML = DirLogic.LISTINGS.filter(function (b) { return b.featured; }).slice(0, 3).map(function (b) { return DIR.cardHTML(b); }).join("");
+</script>
+<noscript><p class="wrap" style="padding:16px 20px">This demo directory needs JavaScript to render listings. The full catalogue of 18 fictional businesses is generated in your browser; no data is sent anywhere.</p></noscript>
+</body>
+</html>

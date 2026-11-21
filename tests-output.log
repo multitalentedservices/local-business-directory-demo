@@ -1,0 +1,159 @@
+PASS | listing count | got 18 want 18
+PASS | category count | got 6 want 6
+PASS | area count | got 5 want 5
+PASS | 3 listings in food | got 3 want 3
+PASS | 3 listings in salon | got 3 want 3
+PASS | 3 listings in health | got 3 want 3
+PASS | 3 listings in auto | got 3 want 3
+PASS | 3 listings in home | got 3 want 3
+PASS | 3 listings in retail | got 3 want 3
+PASS | area Satellite Town | got 5 want 5
+PASS | area Model Town | got 5 want 5
+PASS | area Civil Lines | got 3 want 3
+PASS | area People's Colony | got 3 want 3
+PASS | area DHA Gujranwala | got 2 want 2
+PASS | featured count | got 5 want 5
+PASS | listing fields chargha-house | Chargha House · 4.8 · 214 reviews
+PASS | hours sane chargha-house
+PASS | listing fields chai-khana | Chai Khana · 4.6 · 168 reviews
+PASS | hours sane chai-khana
+PASS | listing fields neelum-bbq | Neelum BBQ & Karahi · 4.5 · 302 reviews
+PASS | hours sane neelum-bbq
+PASS | listing fields gents-cut | The Gents Cut · 4.7 · 189 reviews
+PASS | hours sane gents-cut
+PASS | listing fields glow-studio | Glow Studio Salon · 4.9 · 256 reviews
+PASS | hours sane glow-studio
+PASS | listing fields barber-bros | Barber Bros · 4.4 · 98 reviews
+PASS | hours sane barber-bros
+PASS | listing fields sehat-plus | Sehat Plus Pharmacy · 4.6 · 143 reviews
+PASS | hours sane sehat-plus
+PASS | listing fields city-care | City Care Clinic · 4.5 · 211 reviews
+PASS | hours sane city-care
+PASS | listing fields dental-art | Dental Art Studio · 4.8 · 87 reviews
+PASS | hours sane dental-art
+PASS | listing fields torque-auto | Torque Auto Workshop · 4.7 · 176 reviews
+PASS | hours sane torque-auto
+PASS | listing fields quickfix-tyres | QuickFix Tyres & Oil · 4.3 · 64 reviews
+PASS | hours sane quickfix-tyres
+PASS | listing fields autoglow | AutoGlow Detailing · 4.6 · 121 reviews
+PASS | hours sane autoglow
+PASS | listing fields fixit-home | FixIt Plumbers & Electricians · 4.5 · 233 reviews
+PASS | hours sane fixit-home
+PASS | listing fields coolair-ac | CoolAir AC Services · 4.4 · 157 reviews
+PASS | hours sane coolair-ac
+PASS | listing fields paint-polish | Paint & Polish Home Services · 4.7 · 92 reviews
+PASS | hours sane paint-polish
+PASS | listing fields khaddar-house | Khaddar House · 4.8 · 278 reviews
+PASS | hours sane khaddar-house
+PASS | listing fields mobile-zone | Mobile Zone · 4.3 · 190 reviews
+PASS | hours sane mobile-zone
+PASS | listing fields fresh-mart | Fresh Mart Grocery · 4.6 · 324 reviews
+PASS | hours sane fresh-mart
+PASS | no filters = all | got 18 want 18
+PASS | search karahi | got 2 want 2
+PASS | search pharmacy (category label) | got 1 want 1
+PASS | search AC service (tags/services) | got 2 want 2
+PASS | search satellite (area in haystack) | got 5 want 5
+PASS | combined food + Satellite Town | got 1 want 1
+PASS | combined food + open now | got 3 want 3
+PASS | combined salon + open now (Glow closed at boundary) | got 2 want 2
+PASS | combined health + open now (2 of 3 closed Sundays) | got 1 want 1
+PASS | combined empty retail + Civil Lines | got 0 want 0
+PASS | combined q + category + area | got 1 want 1
+PASS | sort rating first (4.9 Glow) | got "glow-studio" want "glow-studio"
+PASS | sort rating monotonic
+PASS | sort name first | got "autoglow" want "autoglow"
+PASS | sort name last | got "torque-auto" want "torque-auto"
+PASS | sort featured: first 5 all featured
+PASS | sort featured: rest none featured
+PASS | demo clock is Sunday 14:30 | got "Sunday 870" want "Sunday 870"
+PASS | open-now count at demo time | got 12 want 12
+PASS | boundary: Glow Sun 2:29 PM (869) = open
+PASS | boundary: Glow Sun 2:30 PM (870, exactly closing) = closed
+PASS | boundary: Glow Sun 10:00 AM (600, exactly opening) = open
+PASS | boundary: Glow Sun 9:59 AM (599) = closed
+PASS | boundary: Glow is closed at the demo instant
+PASS | closed-day: City Care Sunday midday = closed
+PASS | boundary: City Care Mon at opening 540 = open
+PASS | boundary: City Care Mon at closing 1260 = closed
+PASS | midnight close: Neelum Sun 23:59 open, Chargha Sun 23:00 closed
+PASS | hours label Glow Sunday | got "10:00 AM – 2:30 PM" want "10:00 AM – 2:30 PM"
+PASS | hours label City Care Sunday | got "Closed" want "Closed"
+PASS | fmtTime midnight close | got "12:00 AM (midnight)" want "12:00 AM (midnight)"
+PASS | valid enquiry -> no errors | got 0 want 0
+PASS | bad enquiry name names constraint
+PASS | bad enquiry phone names constraint
+PASS | bad enquiry message names constraint
+PASS | valid claim -> no errors | got 0 want 0
+PASS | bad claim listing named
+PASS | bad claim role names options
+PASS | bad claim email names format
+PASS | bad claim proof names constraint
+PASS | valid suggestion -> no errors | got 0 want 0
+PASS | bad suggestion fields all named | ["bizName","category","area","phone"]
+PASS | phone plain 11 digits ok
+PASS | phone with spaces ok
+PASS | phone +92 rejected (rule is 03 form)
+PASS | phone 10 digits rejected
+PASS | claim ref format CL-DEMO-#### | CL-DEMO-3752
+PASS | claim ref deterministic | got "CL-DEMO-3752" want "CL-DEMO-3752"
+PASS | suggest ref format CL-DEMO-####
+PASS | enquiry ref format EN-DEMO-####
+PASS | refs differ claim vs enquiry namespace
+PASS | pending predicate true for claimed listing
+PASS | pending predicate false for unclaimed listing
+PASS | pending predicate ignores new-listing records
+PASS | pending predicate false for empty record set
+PASS | suggested business absent from catalogue
+PASS | claim persistence round-trip
+PASS | enquiry persistence round-trip
+PASS | wa link number+business
+PASS | wa text mentions demo directory
+PASS | contrast ink on paper | 16.56:1
+PASS | contrast ink on card | 17.73:1
+PASS | contrast ink on band | 14.65:1
+PASS | contrast accent on paper | 8.35:1
+PASS | contrast accent on card | 8.94:1
+PASS | contrast accent on band | 7.39:1
+PASS | contrast white on accent (buttons) | 8.94:1
+PASS | contrast accent-dark on paper (hover) | 11.01:1
+PASS | contrast paper on ink (dark band/footer) | 16.56:1
+PASS | contrast muted on paper | 7.18:1
+PASS | contrast muted on card | 7.69:1
+PASS | contrast error on paper | 6.11:1
+PASS | contrast error on card | 6.54:1
+PASS | contrast focus accent on paper >= 3 | 8.35:1
+PASS | DEMO labelled index.html
+PASS | title+meta index.html
+PASS | local refs exist index.html | assets/favicon.svg,css/style.css,index.html,index.html,browse.html,claim.html,mine.html,about.html,assets/hero.jpg,browse.html,claim.html,browse.html,claim.html,mine.html,about.html,js/logic.js,js/site.js,browse.html
+PASS | DEMO labelled browse.html
+PASS | title+meta browse.html
+PASS | local refs exist browse.html | assets/favicon.svg,css/style.css,index.html,index.html,browse.html,claim.html,mine.html,about.html,browse.html,claim.html,mine.html,about.html,js/logic.js,js/site.js,js/browse.js
+PASS | DEMO labelled listing.html
+PASS | title+meta listing.html
+PASS | local refs exist listing.html | assets/favicon.svg,css/style.css,index.html,index.html,browse.html,claim.html,mine.html,about.html,browse.html,browse.html,claim.html,assets/hero.jpg,mine.html,browse.html,claim.html,mine.html,about.html,js/logic.js,js/site.js,js/listing.js
+PASS | DEMO labelled claim.html
+PASS | title+meta claim.html
+PASS | local refs exist claim.html | assets/favicon.svg,css/style.css,index.html,index.html,browse.html,claim.html,mine.html,about.html,mine.html,browse.html,mine.html,browse.html,claim.html,mine.html,about.html,js/logic.js,js/site.js,js/claim.js
+PASS | DEMO labelled mine.html
+PASS | title+meta mine.html
+PASS | local refs exist mine.html | assets/favicon.svg,css/style.css,index.html,index.html,browse.html,claim.html,mine.html,about.html,claim.html,browse.html,browse.html,claim.html,mine.html,about.html,js/logic.js,js/site.js,js/mine.js
+PASS | DEMO labelled about.html
+PASS | title+meta about.html
+PASS | local refs exist about.html | assets/favicon.svg,css/style.css,index.html,index.html,browse.html,claim.html,mine.html,about.html,browse.html,browse.html,claim.html,mine.html,about.html,js/logic.js,js/site.js
+PASS | no lorem ipsum anywhere
+PASS | no live analytics endpoints
+PASS | no external map embeds
+PASS | map placeholder honestly labelled in source
+PASS | category image exists assets/cat-food.jpg
+PASS | category image exists assets/cat-salon.jpg
+PASS | category image exists assets/cat-health.jpg
+PASS | category image exists assets/cat-auto.jpg
+PASS | category image exists assets/cat-home.jpg
+PASS | category image exists assets/cat-retail.jpg
+PASS | hero image exists
+PASS | code < 400 KB | 80785 B
+PASS | each image <= 120 KB | max 122383 B
+PASS | media total <= 1.6 MB | 825998 B total
+----
+TOTAL: 157 PASS / 0 FAIL
