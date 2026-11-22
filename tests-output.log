@@ -152,7 +152,7 @@ PASS | category image exists assets/cat-auto.jpg
 PASS | category image exists assets/cat-home.jpg
 PASS | category image exists assets/cat-retail.jpg
 PASS | hero image exists
-PASS | code < 400 KB | 80785 B
+PASS | code < 400 KB | 84776 B
 PASS | each image <= 120 KB | max 122383 B
 PASS | media total <= 1.6 MB | 825998 B total
 ----

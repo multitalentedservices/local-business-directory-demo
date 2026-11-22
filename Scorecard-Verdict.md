@@ -43,3 +43,32 @@ Reasons (defects as: what is wrong · where · what fixed looks like):
 Next step: [ ] To AICOS-025 release gate   [X] Back to Gate 5 (external evidence completions only — both prepared, neither is build work)   [ ] Back to Gate 2
 
 Disclosures: one test assertion amended during the build (local-refs check skips JS template fragments from inline scripts) and two rendered defects found by reading captures and fixed with re-capture (dark-band panel text specificity leak; inline grid-template-columns on the listing hero defeating the mobile media query, plus the homepage h1 floor at ≤560px) — all disclosed in BUILD-NOTES.md. One internal-jargon check was run over all rendered copy (lesson 40): none found in user-facing text.
+
+## Addendum — Round-2 Re-verification FIX RUN (2026-11-22)
+
+Independent round-2 re-verification (`Reverification-2026-11-21/round2/REPORT.md`) found 1 visible
++ 1 minor defect on this site. Both FIXED, re-shot and read; battery **157 PASS / 0 FAIL**
+unamended after fixes:
+
+- **LD-1 (visible) — No mobile menu; header 308px tall at 390px, 494px at 320px.** The full
+  desktop nav was carried onto small screens unwrapped (4 stacked rows at 320). Fix (the
+  round-1 Clinic pattern in the Gazette's own rule-and-ink idiom): all 6 pages gain a
+  `.nav-toggle` "Menu" strip (full-width, hairline-ruled, uppercase) and `id="main-nav"`,
+  wired in `js/site.js` (aria-expanded, closes on link click and Escape). At ≤768px the nav
+  is hidden until opened, then renders as full-width ruled rows; the masthead compresses
+  (padding 10px/8px, nameplate 26px at ≤560px) and the dateline centres and sheds its third
+  item at ≤560px. Proof: DOM geometry — closed header **179px at 390 (was 308)** and **219px
+  at 320 (was 494)**; toggle visible ≤768, open state shows all 5 links with 0 overflow
+  (`round2/fix2-local-business-directory/menu-open-phone.png`, read by eye); desktop header
+  unchanged (187px, nav on one row). Re-shoot 18 combos + 6 probe320, 0 problems.
+- **LD-2 (minor) — Hero search placeholder clipped mid-word at 320px.** Canvas text
+  measurement: the old text ("Try: karahi, pharmacy, AC service…") is 259px wide in a 210px
+  inner field. Shortened in one measured step to "Try: karahi, pharmacy, AC…" (202px —
+  fits, all three example terms kept). Proof: canvas measure + element capture at 320px
+  read by eye — the placeholder renders in full.
+
+Score unchanged: **91/100 — REJECT (evidence bar only)** — served-preview CWV + AICOS-112 §0
+sign-off still outstanding; defect repairs do not manufacture them.
+Push of the changed text files (css/style.css, js/site.js, all 6 HTML pages,
+Scorecard-Verdict.md, tests-output.log) is pending the GitHub connector's approval card —
+see FIX-REPORT-ROUND2.md.
