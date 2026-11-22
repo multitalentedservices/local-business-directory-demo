@@ -45,11 +45,32 @@
     if (s.openNow) parts.push("open now only (demo clock " + L.DEMO_TIME_LABEL + ")");
     return parts.length ? parts.join(", ") : "no filters";
   }
+  /* Animated result count (premium layer): the display numeral tweens to the new
+     count with a vanilla rAF tween — Alpine.js was measured OUT of this page's P8
+     budget (see premium fragment), so the count is animated with existing JS only.
+     The aria-live count line itself is set instantly, never tweened. */
+  var countNumEl = document.querySelector("[data-count-num]");
+  var shownCount = L.LISTINGS.length, countTween = null;
+  function animateCount(to) {
+    if (!countNumEl) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { countNumEl.textContent = to; shownCount = to; return; }
+    if (countTween) cancelAnimationFrame(countTween);
+    var from = shownCount, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / 320);
+      var eased = 1 - Math.pow(1 - p, 3);
+      countNumEl.textContent = Math.round(from + (to - from) * eased);
+      if (p < 1) countTween = requestAnimationFrame(step); else { shownCount = to; countTween = null; }
+    }
+    countTween = requestAnimationFrame(step);
+  }
   function render() {
     var s = stateFromControls();
     applyToURL(s);
     var list = L.sortListings(L.filterListings(s), s.sort);
     countEl.textContent = "Showing " + list.length + " of " + L.LISTINGS.length + " listings";
+    animateCount(list.length);
     resultsEl.innerHTML = list.map(function (b) { return DIR.cardHTML(b); }).join("");
     if (list.length === 0) {
       emptyText.textContent = "Nothing in the directory matches " + describe(s) + ". Try removing one filter, or reset everything below.";

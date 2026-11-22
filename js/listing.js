@@ -40,6 +40,18 @@
   }
   renderClaimBadge();
 
+  /* Houzz-pattern trust panel: presentation of THIS listing's existing demo record only —
+     rating, review count, featured state, open state vs the demo clock, services/tags on file. */
+  document.querySelector("[data-trust]").innerHTML =
+    '<div class="trust-rating"><span class="rating-big" aria-hidden="true">' + b.rating.toFixed(1) + '</span>' +
+    '<span class="rating-side"><span class="stars" aria-label="Rated ' + b.rating + ' out of 5 (demo data)">★ out of 5</span><br>' + b.reviews + ' demo reviews (fictional)</span></div>' +
+    '<dl class="trust-rows">' +
+    '<div><dt>Listing status (demo)</dt><dd>' + (b.featured ? "Featured in this edition" : "Standard listing") + '</dd></div>' +
+    '<div><dt>Open state, demo clock</dt><dd>' + (L.isOpenNow(b) ? "Open now" : "Closed now") + " · " + DIR.esc(L.hoursLabel(b, L.DEMO_DAY)) + " today</dd></div>" +
+    '<div><dt>Services on record</dt><dd>' + b.services.length + " listed</dd></div>" +
+    '<div><dt>Good-to-know tags</dt><dd>' + b.tags.map(function (t) { return DIR.esc(t); }).join(" · ") + '</dd></div>' +
+    '<div><dt>Area</dt><dd>' + DIR.esc(b.area) + ", Gujranwala</dd></div>" +
+    "</dl>";
   document.querySelector("[data-services]").innerHTML = b.services.map(function (s) { return "<li>" + DIR.esc(s) + "</li>"; }).join("");
   document.querySelector("[data-tags]").innerHTML = b.tags.map(function (t) { return '<span class="tag">' + DIR.esc(t) + "</span>"; }).join("");
   document.querySelector("[data-hours]").innerHTML =

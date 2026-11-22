@@ -72,3 +72,58 @@ sign-off still outstanding; defect repairs do not manufacture them.
 Push of the changed text files (css/style.css, js/site.js, all 6 HTML pages,
 Scorecard-Verdict.md, tests-output.log) is pending the GitHub connector's approval card —
 see FIX-REPORT-ROUND2.md.
+
+## Addendum — PREMIUM UPGRADE PASS (2026-11-22, ladder #11)
+
+Premium layer applied per `Premium-Standard-and-Library-Plan.md` §5 #11 (Infatuation + Houzz
+patterns). Battery **157 PASS / 0 FAIL, tests.js UNAMENDED** before and after; separate
+`premium-checks.js` **15 PASS / 0 FAIL** (vendor hashes vs Install-Record, per-page gzip JS
+budgets, P1 rules). Full capture sets re-shot and read (standard 18 combos, flows, nojs,
+reduced, probe320, keyboard — 0 problem combos everywhere).
+
+What was added:
+- **Rating as display type** — every card now sets the rating as a 52px Barlow Condensed
+  numeral (64px in the listing trust panel, 38px in the listing hero line).
+- **Written mini-reviews** — each card's existing Gazette listing note (the listing's own
+  blurb from the demo record) is now set as a ruled editorial mini-review. No review text
+  was invented; the blurb is editorial copy from the existing data, labelled as such.
+- **Editorial photo strip (index)** — the six existing category photographs as a magazine
+  strip; with the premium JS it becomes the page's ONE signature scene: a GSAP
+  ScrollTrigger scrubbed horizontal drift. No-JS/reduced-motion: a plain scrollable strip.
+- **Houzz-pattern trust panel ("The Gazette check", listing page)** — rating, demo review
+  count, featured/standard status, open state vs the demo clock, services on record, tags,
+  area — ALL read from the listing's own existing demo record, with an explicit
+  "nothing here is a real-world verification" note. **Deviation recorded:** Houzz's
+  response-time and hire-count rows were NOT built — the demo data carries no such fields,
+  and P10 forbids inventing them.
+- **Animated result count (browse)** — the count is now also a 64px display numeral,
+  tweened on filter changes. **Alpine decision (measured):** browse's existing JS is
+  8,471 B gzip; Alpine 3.17.5 alone is 19,902 B gzip → 28,373 B total, BREAKING the P8
+  plain-page budget (≤20 KB). Alpine was therefore NOT installed on this site; the count
+  is animated with a vanilla rAF tween in browse.js (~+430 B gzip) and facet interactions
+  remain the existing native controls + URL state. The aria-live count line is set
+  instantly, never tweened.
+- **Vendor copies (index only):** GSAP 3.15.1 + ScrollTrigger + Lenis 1.3.27 (JS+CSS) in
+  `assets/vendor/`, sha256-verified against the Install-Record; deferred, explicit
+  `gsap.registerPlugin(ScrollTrigger)`, Lenis↔ScrollTrigger ticker sync. Lenis never
+  constructs under prefers-reduced-motion; all GSAP effects run from visible defaults.
+- **P7:** CSS View Transitions (400ms) + card/tile/button hover-active micro-interactions
+  in the site's own system.
+
+P1 re-probe (the audit's own `default-style-probe.js`, fresh run): **0 offenders on all
+12 page×viewport combos, 0 focus offenders; the DESIGNED current-page nav underlines
+(aria-current rule) verified present** (desktop; on phone the nav is behind the menu
+toggle by design). Base rules untouched by this pass.
+
+JS weights (TOTAL gzip per page, measured by premium-checks.js): index (hero) **60,838 B**
+≤ 90 KB ✓ · browse 8,932 B · listing 9,382 B · claim 8,776 B · mine 8,063 B · about
+7,246 B — all plain pages ≤ 20 KB ✓.
+
+RE-SCORE: Area 2 UI/UX 14→**15** (module depth: trust panel + animated counts at directory
+density, scannability kept — browse battery + flow set green) · Area 4 Animation &
+interactions 9→**10** (Lenis + one scrubbed signature scene + masked line-rise hero +
+micro-interactions, all reduced-motion-safe and re-captured). All other areas unchanged.
+**TOTAL: 91 → 93 / 100 — verdict remains REJECT (evidence bar only):** the same two
+external acts hold the remaining 7 points (served-preview CWV, Area 7, 4 pts · AICOS-112
+§0 sign-off, Area 1, 2 pts · HTTPS hosting property, Area 10, 1 pt). No new defects;
+signature capture: `screenshots/signature-moment.png` (Browse editorial listing moment).

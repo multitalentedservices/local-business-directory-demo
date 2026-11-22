@@ -30,8 +30,9 @@
         '<div class="meta"><span class="tag">' + DIR.esc(L.catLabel(b.category)) + '</span><span class="tag">' + DIR.esc(b.area) + '</span>' +
         (b.featured ? '<span class="badge feat">Featured</span>' : '') + '</div>' +
         '<h3><a href="listing.html?id=' + b.id + '">' + DIR.esc(b.name) + '</a></h3>' +
-        '<div class="meta"><span class="stars" aria-label="Rated ' + b.rating + ' out of 5 (demo data)">★ ' + b.rating.toFixed(1) + '</span><span>' + b.reviews + ' demo reviews</span>' + DIR.openBadge(b) + '</div>' +
-        '<p>' + DIR.esc(b.blurb) + '</p>' +
+        '<div class="rating-row"><span class="rating-big" aria-hidden="true">' + b.rating.toFixed(1) + '</span>' +
+        '<span class="rating-side"><span class="stars" aria-label="Rated ' + b.rating + ' out of 5 (demo data)">★ out of 5</span><br>' + b.reviews + ' demo reviews</span>' + DIR.openBadge(b) + '</div>' +
+        '<div class="mini-review"><span class="mr-label">Gazette listing note</span><p>' + DIR.esc(b.blurb) + '</p></div>' +
         '<div class="meta"><span>Today: ' + DIR.esc(L.hoursLabel(b, L.DEMO_DAY)) + '</span></div>' +
         '<div class="card-foot"><a class="btn small" href="listing.html?id=' + b.id + '">View listing</a>' +
         '<a class="btn small ghost" href="claim.html?listing=' + b.id + '">Claim this listing</a></div>' +

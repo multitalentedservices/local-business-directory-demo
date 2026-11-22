@@ -6,9 +6,9 @@
 <title>Browse &amp; Search — Gujranwala Gazette Directory (Demo)</title>
 <meta name="description" content="DEMO: search and filter 18 fictional Gujranwala businesses by text, category, area and open-now, with three sorts and live counts.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -48,6 +48,7 @@
     </select></div>
   </form>
 
+  <div class="count-display" aria-hidden="true"><span class="cd-num" data-count-num>18</span><span class="cd-label">listings<br>on the page</span></div>
   <p class="count-line" data-count aria-live="polite"></p>
   <div class="grid" data-results></div>
   <div class="empty" data-empty hidden>

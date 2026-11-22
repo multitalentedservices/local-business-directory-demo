@@ -6,10 +6,15 @@
 <title>Gujranwala Gazette Directory — Find Local Businesses (Demo)</title>
 <meta name="description" content="DEMO portfolio directory for a fictional Gujranwala city guide: 18 fictional businesses across 6 categories and 5 areas, with search, open-now filters, listing enquiries and claim-your-listing.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="assets/vendor/lenis.css">
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="js/premium.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -31,7 +36,7 @@
     <div class="hero-grid">
       <div>
         <p class="eyebrow">The city directory · Est. for this demo</p>
-        <h1>Find a good business in Gujranwala, fast.</h1>
+        <h1><span class="line-mask"><span class="line-inner">Find a good business</span></span><span class="line-mask"><span class="line-inner">in Gujranwala, fast.</span></span></h1>
         <p class="lede">Restaurants, salons, clinics, workshops and shops across Satellite Town, Model Town, Civil Lines, People's Colony and DHA — searched in seconds, with honest opening hours worked out against the printed demo clock.</p>
         <form class="searchbox" action="browse.html" method="get">
           <div class="searchrow">
@@ -50,6 +55,21 @@
       </div>
       <div class="hero-frame"><img class="hero-img" src="assets/hero.jpg" alt="A busy Gujranwala bazaar street with shops, rickshaws and shoppers — demo photograph"></div>
     </div>
+  </div></section>
+
+  <section class="photo-strip-band"><div class="wrap">
+    <div class="photo-strip-head">
+      <p class="eyebrow" style="margin:0">From the Gazette picture desk</p>
+      <p class="note" style="margin:0">One photograph per shelf of the directory — demo photographs, the same images the category tiles use.</p>
+    </div>
+    <div class="photo-strip" data-photo-strip style="margin-top:14px"><div class="photo-strip-inner">
+      <figure class="strip-item" style="margin:0"><img src="assets/cat-food.jpg" alt="Photo representing Restaurants and Cafés in Gujranwala — demo photograph"><figcaption><strong>Restaurants &amp; Cafés</strong>3 demo listings</figcaption></figure>
+      <figure class="strip-item" style="margin:0"><img src="assets/cat-salon.jpg" alt="Photo representing Salons and Barbers in Gujranwala — demo photograph"><figcaption><strong>Salons &amp; Barbers</strong>3 demo listings</figcaption></figure>
+      <figure class="strip-item" style="margin:0"><img src="assets/cat-health.jpg" alt="Photo representing Clinics and Pharmacies in Gujranwala — demo photograph"><figcaption><strong>Clinics &amp; Pharmacies</strong>3 demo listings</figcaption></figure>
+      <figure class="strip-item" style="margin:0"><img src="assets/cat-auto.jpg" alt="Photo representing Auto Services in Gujranwala — demo photograph"><figcaption><strong>Auto Services</strong>3 demo listings</figcaption></figure>
+      <figure class="strip-item" style="margin:0"><img src="assets/cat-home.jpg" alt="Photo representing Home Services in Gujranwala — demo photograph"><figcaption><strong>Home Services</strong>3 demo listings</figcaption></figure>
+      <figure class="strip-item" style="margin:0"><img src="assets/cat-retail.jpg" alt="Photo representing Retail and Shops in Gujranwala — demo photograph"><figcaption><strong>Retail &amp; Shops</strong>3 demo listings</figcaption></figure>
+    </div></div>
   </div></section>
 
   <section class="band"><div class="wrap">
